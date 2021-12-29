@@ -1,24 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Search from './components/Search';
+import Home from './containers/Home';
+import SliderHome from './containers/SliderHome';
+import About from './containers/About';
+import Err_404 from './containers/Err_404';
+import Contact from './containers/Contact';
+import News from './containers/News';
+import SingleNews from './containers/SingleNews';
+import Shop from './containers/Shop';
+import Checkout from './containers/Checkout';
+import SingleProduct from './containers/SingleProduct';
+import Cart from './containers/Cart';
+import Footer from './components/Footer';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+    <Header />
+    <Search />
+    <Switch> 
+      <Route exact path="/" component={Home}/>
+      <Route exact path="/sliderhome" component={SliderHome}/>
+      <Route path="/about" component={About}/>
+      <Route path="/Err404" component={Err_404}/>
+      <Route path="/contact" component={Contact}/>
+      <Route path="/news" component={News}/>
+      <Route path="/singleNews" component={SingleNews}/>
+      <Route path="/checkOut" component={Checkout}/>
+      <Route path="/shop" component={Shop}/>
+      <Route path="/singleProduct" component={SingleProduct}/>
+      <Route path="/Err404" component={Err_404}/>
+      <Route exact path="/cart" component={Cart}/>
+    </Switch>
+    <Footer />
+  </>
   );
 }
 
