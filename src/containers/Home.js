@@ -60,6 +60,15 @@ function Home(props) {
                             </div>
                         </div>
                     </div>
+                    <div className="d-flex justify-content-center align-items-center mt-5">
+                        <div className="counter">
+                            <Link to="/counter">
+                                <Button buttonType={ButtonType.Primary}>
+                                    Counter
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="product-section mt-150 mb-150">

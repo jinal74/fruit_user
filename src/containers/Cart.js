@@ -91,8 +91,12 @@ function Cart(props) {
                                     </tbody>
                                 </table>
                                 <div className="cart-buttons">
-                                    <Button buttonType={ButtonType.Primary}>Update Cart</Button>
-                                    <Button buttonType={ButtonType.Primary}>Check Out</Button>
+                                    <Link to="/cart">
+                                        <Button buttonType={ButtonType.Primary}>Update Cart</Button>
+                                    </Link>
+                                    <Link to="/checkOut">
+                                        <Button buttonType={ButtonType.Primary}>Check Out</Button>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="coupon-section">

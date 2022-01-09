@@ -12,6 +12,7 @@ import Shop from './containers/Shop';
 import Checkout from './containers/Checkout';
 import SingleProduct from './containers/SingleProduct';
 import Cart from './containers/Cart';
+import Counter from './containers/Counter';
 import Footer from './components/Footer';
 import { Route, Switch } from 'react-router-dom';
 
@@ -33,6 +34,7 @@ function App() {
       <Route path="/singleProduct" component={SingleProduct}/>
       <Route path="/Err404" component={Err_404}/>
       <Route path="/cart" component={Cart}/>
+      <Route path="/counter" component={Counter}/>
     </Switch>
     <Footer />
   </>
