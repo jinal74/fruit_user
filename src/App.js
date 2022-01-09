@@ -2,7 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import Search from './components/Search';
 import Home from './containers/Home';
-import SliderHome from './containers/SliderHome';
+// import SliderHome from './containers/SliderHome';
 import About from './containers/About';
 import Err_404 from './containers/Err_404';
 import Contact from './containers/Contact';
@@ -22,7 +22,7 @@ function App() {
     <Search />
     <Switch> 
       <Route exact path="/" component={Home}/>
-      <Route exact path="/sliderhome" component={SliderHome}/>
+      {/* <Route exact path="/sliderhome" component={SliderHome}/> */}
       <Route path="/about" component={About}/>
       <Route path="/Err404" component={Err_404}/>
       <Route path="/contact" component={Contact}/>
@@ -32,7 +32,7 @@ function App() {
       <Route path="/shop" component={Shop}/>
       <Route path="/singleProduct" component={SingleProduct}/>
       <Route path="/Err404" component={Err_404}/>
-      <Route exact path="/cart" component={Cart}/>
+      <Route path="/cart" component={Cart}/>
     </Switch>
     <Footer />
   </>

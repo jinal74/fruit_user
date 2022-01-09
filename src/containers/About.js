@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Button, { ButtonType } from '../components/common/Button/Button';
 
 function About(props) {
     return (
@@ -81,7 +83,7 @@ function About(props) {
                 <div className="container">
                     <h3>December sale is on! <br /> with big <span className="orange-text">Discount...</span></h3>
                     <div className="sale-percent"><span>Sale! <br /> Upto</span>50% <span>off</span></div>
-                    <a href="shop.html" className="cart-btn btn-lg">Shop Now</a>
+                    <Button buttonType={ButtonType.Primary}>Shop Now</Button>
                 </div>
             </section>
             {/* end shop banner */}
@@ -102,9 +104,15 @@ function About(props) {
                                 <div className="team-bg team-bg-1" />
                                 <h4>Jimmy Doe <span>Farmer</span></h4>
                                 <ul className="social-link-team">
-                                    <li><a href="#" target="_blank"><i className="fab fa-facebook-f" /></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-twitter" /></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-instagram" /></a></li>
+                                    <li>
+                                        <Link target="_blank"><i className="fab fa-facebook-f" /></Link>
+                                    </li>
+                                    <li>
+                                        <Link target="_blank"><i className="fab fa-twitter" /></Link>
+                                    </li>
+                                    <li>
+                                        <Link target="_blank"><i className="fab fa-instagram" /></Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -113,9 +121,15 @@ function About(props) {
                                 <div className="team-bg team-bg-2" />
                                 <h4>Marry Doe <span>Farmer</span></h4>
                                 <ul className="social-link-team">
-                                    <li><a href="#" target="_blank"><i className="fab fa-facebook-f" /></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-twitter" /></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-instagram" /></a></li>
+                                    <li>
+                                        <Link to={{pathname:"https://www.facebook.com/"}} target="_blank"><i className="fab fa-facebook-f" /></Link>
+                                    </li>
+                                    <li>
+                                        <Link to={{pathname:"https://www.twitter.com/"}} target="_blank"><i className="fab fa-twitter" /></Link>
+                                    </li>
+                                    <li>
+                                        <Link to={{pathname:"https://www.instagram.com/"}} target="_blank"><i className="fab fa-instagram" /></Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -124,9 +138,15 @@ function About(props) {
                                 <div className="team-bg team-bg-3" />
                                 <h4>Simon Joe <span>Farmer</span></h4>
                                 <ul className="social-link-team">
-                                    <li><a href="#" target="_blank"><i className="fab fa-facebook-f" /></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-twitter" /></a></li>
-                                    <li><a href="#" target="_blank"><i className="fab fa-instagram" /></a></li>
+                                <li>
+                                        <Link to={{pathname:"https://www.facebook.com/"}} target="_blank"><i className="fab fa-facebook-f" /></Link>
+                                    </li>
+                                    <li>
+                                        <Link to={{pathname:"https://www.twitter.com/"}} target="_blank"><i className="fab fa-twitter" /></Link>
+                                    </li>
+                                    <li>
+                                        <Link to={{pathname:"https://www.instagram.com/"}} target="_blank"><i className="fab fa-instagram" /></Link>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Button, { ButtonType } from '../components/common/Button/Button';
 
 function Shop(props) {
     return (
@@ -36,73 +38,97 @@ function Shop(props) {
                         <div className="col-lg-4 col-md-6 text-center strawberry">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt /></a>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-1.jpg" alt /></Link>
                                 </div>
                                 <h3>Strawberry</h3>
                                 <p className="product-price"><span>Per Kg</span> 85$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <Link to="/cart">
+                                    <Button buttonType={ButtonType.Primary}>
+                                        <i className="fas fa-shopping-cart" /> Add to Cart
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center berry">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt /></a>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-2.jpg" alt /></Link>
                                 </div>
                                 <h3>Berry</h3>
                                 <p className="product-price"><span>Per Kg</span> 70$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <Link to="/cart">
+                                    <Button buttonType={ButtonType.Primary}>
+                                        <i className="fas fa-shopping-cart" /> Add to Cart
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center lemon">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt /></a>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-3.jpg" alt /></Link>
                                 </div>
                                 <h3>Lemon</h3>
                                 <p className="product-price"><span>Per Kg</span> 35$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <Link to="/cart">
+                                    <Button buttonType={ButtonType.Primary}>
+                                        <i className="fas fa-shopping-cart" /> Add to Cart
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-4.jpg" alt /></a>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-4.jpg" alt /></Link>
                                 </div>
                                 <h3>Avocado</h3>
                                 <p className="product-price"><span>Per Kg</span> 50$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <Link to="/cart">
+                                    <Button buttonType={ButtonType.Primary}>
+                                        <i className="fas fa-shopping-cart" /> Add to Cart
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-5.jpg" alt /></a>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-5.jpg" alt /></Link>
                                 </div>
                                 <h3>Green Apple</h3>
                                 <p className="product-price"><span>Per Kg</span> 45$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <Link to="/cart">
+                                    <Button buttonType={ButtonType.Primary}>
+                                        <i className="fas fa-shopping-cart" /> Add to Cart
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center strawberry">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-6.jpg" alt /></a>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-6.jpg" alt /></Link>
                                 </div>
                                 <h3>Strawberry</h3>
                                 <p className="product-price"><span>Per Kg</span> 80$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <Link to="/cart">
+                                    <Button buttonType={ButtonType.Primary}>
+                                        <i className="fas fa-shopping-cart" /> Add to Cart
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-lg-12 text-center">
-                            <div className="pagination-wrap">
+                        <div className="col-lg-12 text-center pt-100">
+                            <div className="pagination-wrap pt-150">
                                 <ul>
-                                    <li><a href="#">Prev</a></li>
-                                    <li><a href="#">1</a></li>
-                                    <li><a className="active" href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">Next</a></li>
+                                    <li><Link>Prev</Link></li>
+                                    <li><Link>1</Link></li>
+                                    <li><Link>2</Link></li>
+                                    <li><Link className="active">3</Link></li>
+                                    <li><Link>Next</Link></li>
                                 </ul>
                             </div>
                         </div>

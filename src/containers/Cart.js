@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Button, { ButtonType } from '../components/common/Button/Button';
+import { InputBoxStyle } from '../components/common/InputBox/InputBox.style';
 
 function Cart(props) {
     return (
@@ -26,7 +29,7 @@ function Cart(props) {
                                 <table className="cart-table">
                                     <thead className="cart-table-head">
                                         <tr className="table-head-row">
-                                            <th className="product-remove" />
+                                            <th className="product-remove"></th>
                                             <th className="product-image">Product Image</th>
                                             <th className="product-name">Name</th>
                                             <th className="product-price">Price</th>
@@ -36,27 +39,27 @@ function Cart(props) {
                                     </thead>
                                     <tbody>
                                         <tr className="table-body-row">
-                                            <td className="product-remove"><a href="#"><i className="far fa-window-close" /></a></td>
+                                            <td className="product-remove"><Link><i className="far fa-window-close" /></Link></td>
                                             <td className="product-image"><img src="assets/img/products/product-img-1.jpg" alt="" /></td>
                                             <td className="product-name">Strawberry</td>
                                             <td className="product-price">$85</td>
-                                            <td className="product-quantity"><input type="number" placeholder={0} /></td>
+                                            <td className="product-quantity px-3"><InputBoxStyle type="number" placeholder={0} /></td>
                                             <td className="product-total">1</td>
                                         </tr>
                                         <tr className="table-body-row">
-                                            <td className="product-remove"><a href="#"><i className="far fa-window-close" /></a></td>
+                                            <td className="product-remove"><Link><i className="far fa-window-close" /></Link></td>
                                             <td className="product-image"><img src="assets/img/products/product-img-2.jpg" alt="" /></td>
                                             <td className="product-name">Berry</td>
                                             <td className="product-price">$70</td>
-                                            <td className="product-quantity"><input type="number" placeholder={0} /></td>
+                                            <td className="product-quantity px-3"><InputBoxStyle type="number" placeholder={0} /></td>
                                             <td className="product-total">1</td>
                                         </tr>
                                         <tr className="table-body-row">
-                                            <td className="product-remove"><a href="#"><i className="far fa-window-close" /></a></td>
+                                            <td className="product-remove"><Link><i className="far fa-window-close" /></Link></td>
                                             <td className="product-image"><img src="assets/img/products/product-img-3.jpg" alt="" /></td>
                                             <td className="product-name">Lemon</td>
                                             <td className="product-price">$35</td>
-                                            <td className="product-quantity"><input type="number" placeholder={0} /></td>
+                                            <td className="product-quantity px-3"><InputBoxStyle type="number" placeholder={0} /></td>
                                             <td className="product-total">1</td>
                                         </tr>
                                     </tbody>
@@ -88,16 +91,16 @@ function Cart(props) {
                                     </tbody>
                                 </table>
                                 <div className="cart-buttons">
-                                    <a href="cart.html" className="boxed-btn">Update Cart</a>
-                                    <a href="checkout.html" className="boxed-btn black">Check Out</a>
+                                    <Button buttonType={ButtonType.Primary}>Update Cart</Button>
+                                    <Button buttonType={ButtonType.Primary}>Check Out</Button>
                                 </div>
                             </div>
                             <div className="coupon-section">
                                 <h3>Apply Coupon</h3>
                                 <div className="coupon-form-wrap">
                                     <form action="index.html">
-                                        <p><input type="text" placeholder="Coupon" /></p>
-                                        <p><input type="submit" defaultValue="Apply" /></p>
+                                        <p><InputBoxStyle type="text" placeholder="Coupon" /></p>
+                                        <p><Button type="submit" buttonType={ButtonType.Primary}>Submit</Button></p>
                                     </form>
                                 </div>
                             </div>

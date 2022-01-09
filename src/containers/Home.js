@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Button, { ButtonType } from '../components/common/Button/Button';
 
 function Home(props) {
     return (
@@ -12,8 +14,8 @@ function Home(props) {
                                     <p className="subtitle">Fresh &amp; Organic</p>
                                     <h1>Delicious Seasonal Fruits</h1>
                                     <div className="hero-btns">
-                                        <a href="shop.html" className="boxed-btn">Fruit Collection</a>
-                                        <a href="contact.html" className="bordered-btn">Contact Us</a>
+                                        <Button buttonType={ButtonType.Primary}>Fruit Collection</Button>
+                                        <Button buttonType={ButtonType.Border}>Contact Us</Button>
                                     </div>
                                 </div>
                             </div>
@@ -74,31 +76,43 @@ function Home(props) {
                         <div className="col-lg-4 col-md-6 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""  className='h-100'/></a>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-1.jpg" alt=""  className='h-100'/></Link>
                                 </div>
                                 <h3>Strawberry</h3>
                                 <p className="product-price"><span>Per Kg</span> 85$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <Link to="/cart">
+                                    <Button buttonType={ButtonType.Primary}>
+                                        <i className="fas fa-shopping-cart" /> Add to Cart
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt="" /></a>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-2.jpg" alt="" /></Link>
                                 </div>
                                 <h3>Berry</h3>
                                 <p className="product-price"><span>Per Kg</span> 70$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <Link to="/cart">
+                                    <Button buttonType={ButtonType.Primary}>
+                                        <i className="fas fa-shopping-cart" /> Add to Cart
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt="" /></a>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-3.jpg" alt="" /></Link>
                                 </div>
                                 <h3>Lemon</h3>
                                 <p className="product-price"><span>Per Kg</span> 35$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <Link to="/cart">
+                                    <Button buttonType={ButtonType.Primary}>
+                                        <i className="fas fa-shopping-cart" /> Add to Cart
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -127,7 +141,11 @@ function Home(props) {
                             <div className="text">Quisquam minus maiores repudiandae nobis, minima saepe id, fugit ullam similique! Beatae, minima quisquam molestias facere ea. Perspiciatis unde omnis iste natus error sit voluptatem accusant</div>
                             {/*Countdown Timer*/}
                             <div className="time-counter"><div className="time-countdown clearfix" data-countdown="2020/2/01"><div className="counter-column"><div className="inner"><span className="count">00</span>Days</div></div> <div className="counter-column"><div className="inner"><span className="count">00</span>Hours</div></div>  <div className="counter-column"><div className="inner"><span className="count">00</span>Mins</div></div>  <div className="counter-column"><div className="inner"><span className="count">00</span>Secs</div></div></div></div>
-                            <a href="cart.html" className="cart-btn mt-3"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                            <Link to="/cart">
+                                <Button buttonType={ButtonType.Primary}>
+                                    <i className="fas fa-shopping-cart" /> Add to Cart
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -198,7 +216,7 @@ function Home(props) {
                                 <h2>We are <span className="orange-text">Fruitkha</span></h2>
                                 <p>Etiam vulputate ut augue vel sodales. In sollicitudin neque et massa porttitor vestibulum ac vel nisi. Vestibulum placerat eget dolor sit amet posuere. In ut dolor aliquet, aliquet sapien sed, interdum velit. Nam eu molestie lorem.</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facilis illo repellat veritatis minus, et labore minima mollitia qui ducimus.</p>
-                                <a href="about.html" className="boxed-btn mt-4">know more</a>
+                                <Button buttonType={ButtonType.Primary}>know more</Button>
                             </div>
                         </div>
                     </div>
@@ -208,7 +226,7 @@ function Home(props) {
                 <div className="container">
                     <h3>December sale is on! <br /> with big <span className="orange-text">Discount...</span></h3>
                     <div className="sale-percent"><span>Sale! <br /> Upto</span>50% <span>off</span></div>
-                    <a href="shop.html" className="cart-btn btn-lg">Shop Now</a>
+                    <Button buttonType={ButtonType.Primary}>Shop Now</Button>
                 </div>
             </section>
             <div className="latest-news pt-150 pb-150">
@@ -232,7 +250,12 @@ function Home(props) {
                                         <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
                                     </p>
                                     <p className="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                                    <a href="single-news.html" className="read-more-btn">read more <i className="fas fa-angle-right" /></a>
+                                    <Link to="/singleNews">
+                                        <Button buttonType={ButtonType.Link}>
+                                            read more 
+                                            <i className="fas fa-angle-right" />
+                                        </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -246,7 +269,12 @@ function Home(props) {
                                         <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
                                     </p>
                                     <p className="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                                    <a href="single-news.html" className="read-more-btn">read more <i className="fas fa-angle-right" /></a>
+                                    <Link to="/singleNews">
+                                        <Button buttonType={ButtonType.Link}>
+                                            read more 
+                                            <i className="fas fa-angle-right" />
+                                        </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -260,43 +288,52 @@ function Home(props) {
                                         <span className="date"><i className="fas fa-calendar" /> 27 December, 2019</span>
                                     </p>
                                     <p className="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
-                                    <a href="single-news.html" className="read-more-btn">read more <i className="fas fa-angle-right" /></a>
+                                    <Link to="/singleNews">
+                                        <Button buttonType={ButtonType.Link}>
+                                            read more 
+                                            <i className="fas fa-angle-right" />
+                                        </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col-lg-12 text-center">
-                            <a href="news.html" className="boxed-btn">More News</a>
+                        <Link to="/news">
+                            <Button buttonType={ButtonType.Primary}>More News</Button>
+                        </Link>
                         </div>
                     </div>
                 </div>
             </div>
+            {/* logo carousel */}
             <div className="logo-carousel-section">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="logo-carousel-inner">
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/1.png" alt="" />
+                                    <img src="assets/img/company-logos/1.png" alt />
                                 </div>
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/2.png" alt="" />
+                                    <img src="assets/img/company-logos/2.png" alt />
                                 </div>
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/3.png" alt="" />
+                                    <img src="assets/img/company-logos/3.png" alt />
                                 </div>
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/4.png" alt="" />
+                                    <img src="assets/img/company-logos/4.png" alt />
                                 </div>
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/5.png" alt="" />
+                                    <img src="assets/img/company-logos/5.png" alt />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            {/* end logo carousel */}
         </div>
     );
 }

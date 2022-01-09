@@ -1,17 +1,17 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header(props) {
     return (
-        <div className = "top-header-area" id = "sticker" >
+        <div className="top-header-area" id="sticker" >
             <div className="container">
                 <div className="row">
                     <div className="col-lg-12 col-sm-12 text-center">
                         <div className="main-menu-wrap">
                             <div className="site-logo">
-                                <a href="index.html">
-                                    <img src="assets/img/logo.png" alt=""/>
-                                </a>
+                                <Link>
+                                    <img src="assets/img/logo.png" alt="" />
+                                </Link>
                             </div>
                             <nav className="main-menu">
                                 <ul>
@@ -19,7 +19,7 @@ function Header(props) {
                                         <Link to="/">Home</Link>
                                         <ul className="sub-menu">
                                             <li><Link exact to="/">Static Home</Link></li>
-                                            <li><Link to="/sliderhome">Slider Home</Link></li>
+                                            {/* <li><Link to="/sliderhome">Slider Home</Link></li> */}
                                         </ul>
                                     </li>
                                     <li>
@@ -56,8 +56,10 @@ function Header(props) {
                                     </li>
                                 </ul>
                             </nav>
-                            <NavLink to="/search" className="mobile-show search-bar-icon"><i className="fas fa-search" /></NavLink>
-                            <div className="mobile-menu" />
+                            <NavLink to="/search" className="mobile-show search-bar-icon">
+                                <i className="fas fa-search" />
+                            </NavLink>
+                            <div className="mobile-menu"></div>
                         </div>
                     </div>
                 </div>

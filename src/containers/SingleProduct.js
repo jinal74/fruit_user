@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Button, { ButtonType } from '../components/common/Button/Button';
+import { InputBoxStyle } from '../components/common/InputBox/InputBox.style';
 
 function SingleProduct(props) {
     return (
@@ -23,7 +26,7 @@ function SingleProduct(props) {
                     <div className="row">
                         <div className="col-md-5">
                             <div className="single-product-img">
-                                <img src="assets/img/products/product-img-5.jpg" alt />
+                                <img src="assets/img/products/product-img-5.jpg" alt="" />
                             </div>
                         </div>
                         <div className="col-md-7">
@@ -33,17 +36,45 @@ function SingleProduct(props) {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p>
                                 <div className="single-product-form">
                                     <form action="index.html">
-                                        <input type="number" placeholder={0} />
+                                        <InputBoxStyle type="number" placeholder={0} />
                                     </form>
-                                    <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                    <Link to="/cart">
+                                        <Button buttonType={ButtonType.Primary}>
+                                            <i className="fas fa-shopping-cart" /> Add to Cart
+                                        </Button>
+                                    </Link>
                                     <p><strong>Categories: </strong>Fruits, Organic</p>
                                 </div>
                                 <h4>Share:</h4>
                                 <ul className="product-share">
-                                    <li><a href><i className="fab fa-facebook-f" /></a></li>
-                                    <li><a href><i className="fab fa-twitter" /></a></li>
-                                    <li><a href><i className="fab fa-google-plus-g" /></a></li>
-                                    <li><a href><i className="fab fa-linkedin" /></a></li>
+                                    <li>
+                                        <Button buttonType={ButtonType.Link}>
+                                            <Link to={{pathname:"https://www.facebook.com/"}} target="_blank">
+                                                <i className="fab fa-facebook-f" />
+                                            </Link>
+                                        </Button>
+                                    </li>
+                                    <li>
+                                        <Button buttonType={ButtonType.Link}>
+                                            <Link to={{pathname:"https://www.twitter.com/"}} target="_blank">
+                                                <i className="fab fa-twitter" />
+                                            </Link>
+                                        </Button>
+                                    </li>
+                                    <li>
+                                        <Button buttonType={ButtonType.Link}>
+                                            <Link to={{pathname:"https://www.linkedin.com/"}} target="_blank">
+                                                <i className="fab fa-linkedin" />
+                                            </Link>
+                                        </Button>
+                                    </li>
+                                    <li>
+                                        <Button buttonType={ButtonType.Link}>
+                                            <Link to={{pathname:"https://www.google.com/"}} target="_blank">
+                                                <i className="fab fa-google" />
+                                            </Link>
+                                        </Button>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -66,31 +97,43 @@ function SingleProduct(props) {
                         <div className="col-lg-4 col-md-6 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt /></a>
+                                    <Link to="/shop"><img src="assets/img/products/product-img-1.jpg" alt /></Link>
                                 </div>
                                 <h3>Strawberry</h3>
                                 <p className="product-price"><span>Per Kg</span> 85$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <Link to="/cart">
+                                    <Button buttonType={ButtonType.Primary}>
+                                        <i className="fas fa-shopping-cart" /> Add to Cart
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt /></a>
+                                    <Link to="/shop"><img src="assets/img/products/product-img-2.jpg" alt /></Link>
                                 </div>
                                 <h3>Berry</h3>
                                 <p className="product-price"><span>Per Kg</span> 70$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <Link to="/cart">
+                                    <Button buttonType={ButtonType.Primary}>
+                                        <i className="fas fa-shopping-cart" /> Add to Cart
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                         <div className="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt /></a>
+                                    <Link to="/shop"><img src="assets/img/products/product-img-3.jpg" alt /></Link>
                                 </div>
                                 <h3>Lemon</h3>
                                 <p className="product-price"><span>Per Kg</span> 35$ </p>
-                                <a href="cart.html" className="cart-btn"><i className="fas fa-shopping-cart" /> Add to Cart</a>
+                                <Link to="/cart">
+                                    <Button buttonType={ButtonType.Primary}>
+                                        <i className="fas fa-shopping-cart" /> Add to Cart
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                     </div>

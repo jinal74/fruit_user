@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom/cjs/react-router-dom.min';
+import { InputBoxStyle } from './common/InputBox/InputBox.style';
 
 function Footer(props) {
     return (
@@ -39,8 +40,8 @@ function Footer(props) {
                             <div className="footer-box subscribe">
                                 <h2 className="widget-title">Subscribe</h2>
                                 <p>Subscribe to our mailing list to get the latest updates.</p>
-                                <form action="index.html">
-                                    <input type="email" placeholder="Email" />
+                                <form action="index.html" className='d-flex align-items-center'>
+                                    <InputBoxStyle type="email" placeholder="Email" />
                                     <button type="submit"><i className="fas fa-paper-plane" /></button>
                                 </form>
                             </div>

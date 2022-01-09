@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Button, { ButtonType } from '../components/common/Button/Button'
+import { InputBoxStyle } from '../components/common/InputBox/InputBox.style';
 
 function Checkout(props) {
     return (
@@ -36,10 +39,10 @@ function Checkout(props) {
                                             <div className="card-body">
                                                 <div className="billing-address-form">
                                                     <form action="index.html">
-                                                        <p><input type="text" placeholder="Name" /></p>
-                                                        <p><input type="email" placeholder="Email" /></p>
-                                                        <p><input type="text" placeholder="Address" /></p>
-                                                        <p><input type="tel" placeholder="Phone" /></p>
+                                                        <p><InputBoxStyle type="text" placeholder="Name" /></p>
+                                                        <p><InputBoxStyle type="email" placeholder="Email" /></p>
+                                                        <p><InputBoxStyle type="text" placeholder="Address" /></p>
+                                                        <p><InputBoxStyle type="tel" placeholder="Phone" /></p>
                                                         <p><textarea name="bill" id="bill" cols={30} rows={10} placeholder="Say Something" defaultValue={""} /></p>
                                                     </form>
                                                 </div>
@@ -123,7 +126,11 @@ function Checkout(props) {
                                         </tr>
                                     </tbody>
                                 </table>
-                                <a href="#" className="boxed-btn">Place Order</a>
+                                <Link to="/cart">
+                                    <Button buttonType={ButtonType.Primary}>
+                                        Place Order
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -1,9 +1,8 @@
 import React from 'react';
+import Button, { ButtonType } from './common/Button/Button';
 
 function Search(props) {
     return (
-        <div>
-            {/* search area */}
             <div className="search-area">
                 <div className="container">
                     <div className="row">
@@ -13,15 +12,13 @@ function Search(props) {
                                 <div className="search-bar-tablecell">
                                     <h3>Search For:</h3>
                                     <input type="text" placeholder="Keywords" />
-                                    <button type="submit">Search <i className="fas fa-search" /></button>
+                                    <Button buttonType={ButtonType.Primary} type="submit">Search <i className="fas fa-search" /></Button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {/* end search area */}
-        </div>
     );
 }
 

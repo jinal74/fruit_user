@@ -1,4 +1,5 @@
 import React from 'react';
+import Button, { ButtonType } from '../components/common/Button/Button';
 
 function Err_404(props) {
     return (
@@ -27,7 +28,7 @@ function Err_404(props) {
                                     <i className="far fa-sad-cry" />
                                     <h1>Oops! Not Found.</h1>
                                     <p>The page you requested for is not found.</p>
-                                    <a href="index.html" className="boxed-btn">Back to Home</a>
+                                    <Button buttonType={ButtonType.Primary}>Back to Home</Button>
                                 </div>
                             </div>
                         </div>

@@ -1,4 +1,6 @@
 import React from 'react';
+import Button, { ButtonType } from '../components/common/Button/Button';
+import { InputBoxStyle } from '../components/common/InputBox/InputBox.style';
 
 function Contact(props) {
     return (
@@ -18,7 +20,7 @@ function Contact(props) {
             </div>
             {/* end breadcrumb section */}
             {/* contact form */}
-            <div className="contact-from-section mt-150 mb-150">
+            <div className="contact-form-section mt-150 mb-150">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-8 mb-5 mb-lg-0">
@@ -29,17 +31,19 @@ function Contact(props) {
                             <div id="form_status" />
                             <div className="contact-form">
                                 <form type="POST" id="fruitkha-contact" onsubmit="return valid_datas( this );">
-                                    <p>
-                                        <input type="text" placeholder="Name" name="name" id="name" />
-                                        <input type="email" placeholder="Email" name="email" id="email" />
+                                    <p className='d-flex justify-content-between'>
+                                        <InputBoxStyle type="text" placeholder="Name" name="name" id="name" />
+                                        <InputBoxStyle type="email" placeholder="Email" name="email" id="email" />
+                                    </p>
+                                    <p className='d-flex justify-content-between'>
+                                        <InputBoxStyle type="tel" placeholder="Phone" name="phone" id="phone" />
+                                        <InputBoxStyle type="text" placeholder="Subject" name="subject" id="subject" />
                                     </p>
                                     <p>
-                                        <input type="tel" placeholder="Phone" name="phone" id="phone" />
-                                        <input type="text" placeholder="Subject" name="subject" id="subject" />
+                                        <textarea name="message" id="message" cols={30} rows={10} placeholder="Message" defaultValue={""} />
                                     </p>
-                                    <p><textarea name="message" id="message" cols={30} rows={10} placeholder="Message" defaultValue={""} /></p>
-                                    <input type="hidden" name="token" defaultValue="FsWga4&@f6aw" />
-                                    <p><input type="submit" defaultValue="Submit" /></p>
+                                    <InputBoxStyle type="hidden" name="token" defaultValue="FsWga4&@f6aw" />
+                                    <p><Button buttonType={ButtonType.Primary}>Submit</Button></p>
                                 </form>
                             </div>
                         </div>
