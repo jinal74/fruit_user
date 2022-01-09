@@ -34,7 +34,7 @@ function About(props) {
                                             </div>
                                             <div className="content">
                                                 <h3>Home Delivery</h3>
-                                                <p>sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+                                                <p>sit volupsdtem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
                                             </div>
                                         </div>
                                     </div>
