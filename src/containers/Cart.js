@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button, { ButtonType } from '../components/common/Button/Button';
-import { InputBoxStyle } from '../components/common/InputBox/InputBox.style';
+import InputBox from '../components/common/InputBox/InputBox';
 
 function Cart(props) {
+
     return (
         <div>
             {/* breadcrumb-section */}
@@ -43,7 +44,7 @@ function Cart(props) {
                                             <td className="product-image"><img src="assets/img/products/product-img-1.jpg" alt="" /></td>
                                             <td className="product-name">Strawberry</td>
                                             <td className="product-price">$85</td>
-                                            <td className="product-quantity px-3"><InputBoxStyle type="number" placeholder={0} /></td>
+                                            <td className="product-quantity px-3"><InputBox type="number" placeholder={0} /></td>
                                             <td className="product-total">1</td>
                                         </tr>
                                         <tr className="table-body-row">
@@ -51,7 +52,7 @@ function Cart(props) {
                                             <td className="product-image"><img src="assets/img/products/product-img-2.jpg" alt="" /></td>
                                             <td className="product-name">Berry</td>
                                             <td className="product-price">$70</td>
-                                            <td className="product-quantity px-3"><InputBoxStyle type="number" placeholder={0} /></td>
+                                            <td className="product-quantity px-3"><InputBox type="number" placeholder={0} /></td>
                                             <td className="product-total">1</td>
                                         </tr>
                                         <tr className="table-body-row">
@@ -59,7 +60,7 @@ function Cart(props) {
                                             <td className="product-image"><img src="assets/img/products/product-img-3.jpg" alt="" /></td>
                                             <td className="product-name">Lemon</td>
                                             <td className="product-price">$35</td>
-                                            <td className="product-quantity px-3"><InputBoxStyle type="number" placeholder={0} /></td>
+                                            <td className="product-quantity px-3"><InputBox type="number" placeholder={0} /></td>
                                             <td className="product-total">1</td>
                                         </tr>
                                     </tbody>
@@ -101,11 +102,20 @@ function Cart(props) {
                             </div>
                             <div className="coupon-section">
                                 <h3>Apply Coupon</h3>
-                                <div className="coupon-form-wrap">
-                                    <form action="index.html">
-                                        <p><InputBoxStyle type="text" placeholder="Coupon" /></p>
-                                        <p><Button type="submit" buttonType={ButtonType.Primary}>Submit</Button></p>
-                                    </form>
+                                <div>
+                                    <div className="coupon-form-wrap">
+                                        <InputBox
+                                            type="text"
+                                            placeholder="Coupon"
+                                            name="coupon"
+                                            id="coupon"
+                                        />
+                                        <Button
+                                            type="submit"
+                                            buttonType={ButtonType.Primary}
+                                        >Submit
+                                        </Button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

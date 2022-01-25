@@ -1,8 +1,42 @@
 import React from 'react';
 import Button, { ButtonType } from '../components/common/Button/Button';
-import { InputBoxStyle } from '../components/common/InputBox/InputBox.style';
+import InputBox from '../components/common/InputBox/InputBox';
+import * as yup from 'yup';
+import { Form, FormikProvider, useFormik } from 'formik';
 
 function Contact(props) {
+    let contactSchema = {
+        name: yup.string()
+            .required("Username is must required"),
+        email: yup.string()
+            .required('E-mail is must required')
+            .email('Invalid email address'),
+        phone: yup.number()
+            .required('Mobile number is must required'),
+        subject: yup.string()
+            .required("Subject is must required"),
+        message: yup.string()
+            .required("Message is must required")
+    }
+
+    let schema = yup.object().shape(contactSchema);
+
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: '',
+        },
+        validationSchema: schema,
+        onSubmit: values => {
+            console.log(values)
+        },
+    });
+
+    const { handleSubmit, errors, getFieldProps, touched } = formik;
+
     return (
         <div>
             {/* breadcrumb-section */}
@@ -28,24 +62,60 @@ function Contact(props) {
                                 <h2>Have you any question?</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, ratione! Laboriosam est, assumenda. Perferendis, quo alias quaerat aliquid. Corporis ipsum minus voluptate? Dolore, esse natus!</p>
                             </div>
-                            <div id="form_status" />
-                            <div className="contact-form">
-                                <form type="POST" id="fruitkha-contact" onsubmit="return valid_datas( this );">
-                                    <p className='d-flex justify-content-between'>
-                                        <InputBoxStyle type="text" placeholder="Name" name="name" id="name" />
-                                        <InputBoxStyle type="email" placeholder="Email" name="email" id="email" />
-                                    </p>
-                                    <p className='d-flex justify-content-between'>
-                                        <InputBoxStyle type="tel" placeholder="Phone" name="phone" id="phone" />
-                                        <InputBoxStyle type="text" placeholder="Subject" name="subject" id="subject" />
-                                    </p>
-                                    <p>
-                                        <textarea name="message" id="message" cols={30} rows={10} placeholder="Message" defaultValue={""} />
-                                    </p>
-                                    <InputBoxStyle type="hidden" name="token" defaultValue="FsWga4&@f6aw" />
-                                    <p><Button buttonType={ButtonType.Primary}>Submit</Button></p>
-                                </form>
-                            </div>
+
+                            <FormikProvider value={formik}>
+                                <Form onSubmit={handleSubmit}>
+                                    <div id="form_status" />
+                                    <div className="contact-form">
+                                            <InputBox
+                                                type="text"
+                                                placeholder="Name"
+                                                name="name"
+                                                id="name"
+                                                {...getFieldProps("name")}
+                                                errors={Boolean(errors.name && touched.name)}
+                                                errorMessage={(errors.name && touched.name) && errors.name}
+                                            />
+                                            <InputBox
+                                                type="email"
+                                                placeholder="Email"
+                                                name="email"
+                                                id="email"
+                                                {...getFieldProps("email")}
+                                                errors={Boolean(errors.email && touched.email)}
+                                                errorMessage={(errors.email && touched.email) && errors.email}
+                                            />
+                                            <InputBox
+                                                type="text"
+                                                placeholder="Phone"
+                                                name="phone"
+                                                id="phone"
+                                                {...getFieldProps("phone")}
+                                                errors={Boolean(errors.phone && touched.phone)}
+                                                errorMessage={(errors.phone && touched.phone) && errors.phone}
+                                            />
+                                            <InputBox
+                                                type="text"
+                                                placeholder="Subject"
+                                                name="subject"
+                                                id="subject"
+                                                {...getFieldProps("subject")}
+                                                errors={Boolean(errors.subject && touched.subject)}
+                                                errorMessage={(errors.subject && touched.subject) && errors.subject}
+                                            />
+                                            <InputBox
+                                                type="textarea"
+                                                name="message"
+                                                id="message"
+                                                placeholder="Message"
+                                                {...getFieldProps("message")}
+                                                errors={Boolean(errors.message && touched.message)}
+                                                errorMessage={(errors.message && touched.message) && errors.message}
+                                            />
+                                        <Button buttonType={ButtonType.Primary} type="submit">Submit</Button>
+                                    </div>
+                                </Form>
+                            </FormikProvider>
                         </div>
                         <div className="col-lg-4">
                             <div className="contact-form-wrap">

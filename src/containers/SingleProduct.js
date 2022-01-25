@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button, { ButtonType } from '../components/common/Button/Button';
-import { InputBoxStyle } from '../components/common/InputBox/InputBox.style';
+import InputBox from '../components/common/InputBox/InputBox';
 
 function SingleProduct(props) {
     return (
@@ -36,7 +36,7 @@ function SingleProduct(props) {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p>
                                 <div className="single-product-form">
                                     <form action="index.html">
-                                        <InputBoxStyle type="number" placeholder={0} />
+                                        <InputBox type="number" placeholder={0} />
                                     </form>
                                     <Link to="/cart">
                                         <Button buttonType={ButtonType.Primary}>

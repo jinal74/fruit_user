@@ -61,7 +61,7 @@ function Home(props) {
                         </div>
                     </div>
                     <div className="d-flex justify-content-center align-items-center mt-5">
-                        <div className="counter">
+                        <div>
                             <Link to="/counter">
                                 <Button buttonType={ButtonType.Primary}>
                                     Counter
@@ -316,7 +316,6 @@ function Home(props) {
                     </div>
                 </div>
             </div>
-            {/* logo carousel */}
             <div className="logo-carousel-section">
                 <div className="container">
                     <div className="row">
@@ -342,7 +341,6 @@ function Home(props) {
                     </div>
                 </div>
             </div>
-            {/* end logo carousel */}
         </div>
     );
 }

@@ -8,6 +8,11 @@ const BaseButton = styled(Button)`
     border: none;
     transition: all 0.3s ease-in-out;
     text-align: center;
+
+    :focus {
+        box-shadow: none;
+        color: F28123;
+    }
 `;
 
 export const PrimaryButton = styled(BaseButton)`

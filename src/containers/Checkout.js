@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button, { ButtonType } from '../components/common/Button/Button'
-import { InputBoxStyle } from '../components/common/InputBox/InputBox.style';
+import InputBox from '../components/common/InputBox/InputBox';
 
 function Checkout(props) {
     return (
@@ -19,7 +19,6 @@ function Checkout(props) {
                     </div>
                 </div>
             </div>
-            {/* end breadcrumb section */}
             {/* check out section */}
             <div className="checkout-section mt-150 mb-150">
                 <div className="container">
@@ -39,10 +38,10 @@ function Checkout(props) {
                                             <div className="card-body">
                                                 <div className="billing-address-form">
                                                     <form action="index.html">
-                                                        <p><InputBoxStyle type="text" placeholder="Name" /></p>
-                                                        <p><InputBoxStyle type="email" placeholder="Email" /></p>
-                                                        <p><InputBoxStyle type="text" placeholder="Address" /></p>
-                                                        <p><InputBoxStyle type="tel" placeholder="Phone" /></p>
+                                                        <p><InputBox type="text" placeholder="Name" /></p>
+                                                        <p><InputBox type="email" placeholder="Email" /></p>
+                                                        <p><InputBox type="text" placeholder="Address" /></p>
+                                                        <p><InputBox type="tel" placeholder="Phone" /></p>
                                                         <p><textarea name="bill" id="bill" cols={30} rows={10} placeholder="Say Something" defaultValue={""} /></p>
                                                     </form>
                                                 </div>
@@ -136,7 +135,6 @@ function Checkout(props) {
                     </div>
                 </div>
             </div>
-            {/* end check out section */}
             {/* logo carousel */}
             <div className="logo-carousel-section">
                 <div className="container">
@@ -163,7 +161,6 @@ function Checkout(props) {
                     </div>
                 </div>
             </div>
-            {/* end logo carousel */}
         </div>
     );
 }

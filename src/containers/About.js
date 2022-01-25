@@ -18,7 +18,6 @@ function About(props) {
                     </div>
                 </div>
             </div>
-            {/* end breadcrumb section */}
             {/* featured section */}
             <div className="feature-bg">
                 <div className="container">
@@ -77,7 +76,6 @@ function About(props) {
                     </div>
                 </div>
             </div>
-            {/* end featured section */}
             {/* shop banner */}
             <section className="shop-banner">
                 <div className="container">
@@ -86,7 +84,6 @@ function About(props) {
                     <Button buttonType={ButtonType.Primary}>Shop Now</Button>
                 </div>
             </section>
-            {/* end shop banner */}
             {/* team section */}
             <div className="mt-150">
                 <div className="container">
@@ -153,7 +150,6 @@ function About(props) {
                     </div>
                 </div>
             </div>
-            {/* end team section */}
             {/* testimonail-section */}
             <div className="testimonail-section mt-80 mb-150">
                 <div className="container">
@@ -207,7 +203,6 @@ function About(props) {
                     </div>
                 </div>
             </div>
-            {/* end testimonail-section */}
             {/* logo carousel */}
             <div className="logo-carousel-section">
                 <div className="container">
@@ -234,7 +229,6 @@ function About(props) {
                     </div>
                 </div>
             </div>
-            {/* end logo carousel */}
         </div>
     );
 }

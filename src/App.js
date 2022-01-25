@@ -25,7 +25,6 @@ function App() {
       <Route exact path="/" component={Home}/>
       {/* <Route exact path="/sliderhome" component={SliderHome}/> */}
       <Route path="/about" component={About}/>
-      <Route path="/Err404" component={Err_404}/>
       <Route path="/contact" component={Contact}/>
       <Route path="/news" component={News}/>
       <Route path="/singleNews" component={SingleNews}/>

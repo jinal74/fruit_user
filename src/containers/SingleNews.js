@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button, { ButtonType } from '../components/common/Button/Button';
-import { InputBoxStyle } from '../components/common/InputBox/InputBox.style';
+import InputBox from '../components/common/InputBox/InputBox';
 
 function SingleNews(props) {
     return (
@@ -19,7 +19,6 @@ function SingleNews(props) {
                     </div>
                 </div>
             </div>
-            {/* end breadcrumb section */}
             {/* single article section */}
             <div className="mt-150 mb-150">
                 <div className="container">
@@ -88,8 +87,8 @@ function SingleNews(props) {
                                     <p>If you have a comment dont feel hesitate to send us your opinion.</p>
                                     <form action="index.html">
                                         <p className='d-flex'>
-                                            <InputBoxStyle type="text" placeholder="Your Name" />
-                                            <InputBoxStyle type="email" placeholder="Your Email" />
+                                            <InputBox type="text" placeholder="Your Name" />
+                                            <InputBox type="email" placeholder="Your Email" />
                                         </p>
                                         <p><textarea name="comment" id="comment" cols={30} rows={10} placeholder="Your Message" defaultValue={""} /></p>
                                         <p>
@@ -137,7 +136,6 @@ function SingleNews(props) {
                     </div>
                 </div>
             </div>
-            {/* end single article section */}
             {/* logo carousel */}
             <div className="logo-carousel-section">
                 <div className="container">
@@ -164,7 +162,6 @@ function SingleNews(props) {
                     </div>
                 </div>
             </div>
-            {/* end logo carousel */}
         </div>
 
     );
