@@ -120,7 +120,7 @@ function SliderHome(props) {
                         <div className="col-lg-4 col-md-6 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt /></a>
+                                    <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt="" /></a>
                                 </div>
                                 <h3>Strawberry</h3>
                                 <p className="product-price"><span>Per Kg</span> 85$ </p>
@@ -130,7 +130,7 @@ function SliderHome(props) {
                         <div className="col-lg-4 col-md-6 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt /></a>
+                                    <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt="" /></a>
                                 </div>
                                 <h3>Berry</h3>
                                 <p className="product-price"><span>Per Kg</span> 70$ </p>
@@ -140,7 +140,7 @@ function SliderHome(props) {
                         <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt /></a>
+                                    <a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt="" /></a>
                                 </div>
                                 <h3>Lemon</h3>
                                 <p className="product-price"><span>Per Kg</span> 35$ </p>
@@ -165,7 +165,7 @@ function SliderHome(props) {
                                         </span>
                                     </div>
                                 </div>
-                                <img src="assets/img/a.jpg" alt />
+                                <img src="assets/img/a.jpg" alt="" />
                             </div>
                         </div>
                         {/*Content Column*/}
@@ -189,7 +189,7 @@ function SliderHome(props) {
                             <div className="testimonial-sliders">
                                 <div className="single-testimonial-slider">
                                     <div className="client-avater">
-                                        <img src="assets/img/avaters/avatar1.png" alt />
+                                        <img src="assets/img/avaters/avatar1.png" alt="" />
                                     </div>
                                     <div className="client-meta">
                                         <h3>Saira Hakim <span>Local shop owner</span></h3>
@@ -203,7 +203,7 @@ function SliderHome(props) {
                                 </div>
                                 <div className="single-testimonial-slider">
                                     <div className="client-avater">
-                                        <img src="assets/img/avaters/avatar2.png" alt />
+                                        <img src="assets/img/avaters/avatar2.png" alt="" />
                                     </div>
                                     <div className="client-meta">
                                         <h3>David Niph <span>Local shop owner</span></h3>
@@ -217,7 +217,7 @@ function SliderHome(props) {
                                 </div>
                                 <div className="single-testimonial-slider">
                                     <div className="client-avater">
-                                        <img src="assets/img/avaters/avatar3.png" alt />
+                                        <img src="assets/img/avaters/avatar3.png" alt="" />
                                     </div>
                                     <div className="client-meta">
                                         <h3>Jacob Sikim <span>Local shop owner</span></h3>
@@ -336,19 +336,19 @@ function SliderHome(props) {
                         <div className="col-lg-12">
                             <div className="logo-carousel-inner">
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/1.png" alt />
+                                    <img src="assets/img/company-logos/1.png" alt="" />
                                 </div>
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/2.png" alt />
+                                    <img src="assets/img/company-logos/2.png" alt="" />
                                 </div>
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/3.png" alt />
+                                    <img src="assets/img/company-logos/3.png" alt="" />
                                 </div>
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/4.png" alt />
+                                    <img src="assets/img/company-logos/4.png" alt="" />
                                 </div>
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/5.png" alt />
+                                    <img src="assets/img/company-logos/5.png" alt="" />
                                 </div>
                             </div>
                         </div>

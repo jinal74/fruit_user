@@ -38,7 +38,7 @@ function Shop(props) {
                         <div className="col-lg-4 col-md-6 text-center strawberry">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-1.jpg" alt /></Link>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-1.jpg" alt="" /></Link>
                                 </div>
                                 <h3>Strawberry</h3>
                                 <p className="product-price"><span>Per Kg</span> 85$ </p>
@@ -52,7 +52,7 @@ function Shop(props) {
                         <div className="col-lg-4 col-md-6 text-center berry">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-2.jpg" alt /></Link>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-2.jpg" alt="" /></Link>
                                 </div>
                                 <h3>Berry</h3>
                                 <p className="product-price"><span>Per Kg</span> 70$ </p>
@@ -66,7 +66,7 @@ function Shop(props) {
                         <div className="col-lg-4 col-md-6 text-center lemon">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-3.jpg" alt /></Link>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-3.jpg" alt="" /></Link>
                                 </div>
                                 <h3>Lemon</h3>
                                 <p className="product-price"><span>Per Kg</span> 35$ </p>
@@ -80,7 +80,7 @@ function Shop(props) {
                         <div className="col-lg-4 col-md-6 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-4.jpg" alt /></Link>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-4.jpg" alt="" /></Link>
                                 </div>
                                 <h3>Avocado</h3>
                                 <p className="product-price"><span>Per Kg</span> 50$ </p>
@@ -94,7 +94,7 @@ function Shop(props) {
                         <div className="col-lg-4 col-md-6 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-5.jpg" alt /></Link>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-5.jpg" alt="" /></Link>
                                 </div>
                                 <h3>Green Apple</h3>
                                 <p className="product-price"><span>Per Kg</span> 45$ </p>
@@ -108,7 +108,7 @@ function Shop(props) {
                         <div className="col-lg-4 col-md-6 text-center strawberry">
                             <div className="single-product-item">
                                 <div className="product-image">
-                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-6.jpg" alt /></Link>
+                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-6.jpg" alt="" /></Link>
                                 </div>
                                 <h3>Strawberry</h3>
                                 <p className="product-price"><span>Per Kg</span> 80$ </p>
@@ -143,19 +143,19 @@ function Shop(props) {
                         <div className="col-lg-12">
                             <div className="logo-carousel-inner">
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/1.png" alt />
+                                    <img src="assets/img/company-logos/1.png" alt="" />
                                 </div>
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/2.png" alt />
+                                    <img src="assets/img/company-logos/2.png" alt="" />
                                 </div>
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/3.png" alt />
+                                    <img src="assets/img/company-logos/3.png" alt="" />
                                 </div>
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/4.png" alt />
+                                    <img src="assets/img/company-logos/4.png" alt="" />
                                 </div>
                                 <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/5.png" alt />
+                                    <img src="assets/img/company-logos/5.png" alt="" />
                                 </div>
                             </div>
                         </div>

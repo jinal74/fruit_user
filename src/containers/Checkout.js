@@ -2,8 +2,41 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button, { ButtonType } from '../components/common/Button/Button'
 import InputBox from '../components/common/InputBox/InputBox';
+import * as yup from 'yup';
+import { Form, FormikProvider, useFormik } from 'formik';
 
 function Checkout(props) {
+    let contactSchema = {
+        name: yup.string()
+            .required("Username is must required"),
+        email: yup.string()
+            .required('E-mail is must required')
+            .email('Invalid email address'),
+        address: yup.string()
+            .required("Address is must required"),
+        phone: yup.number()
+            .required('Mobile number is must required'),
+        bill: yup.string()
+            .required("Message is must required")
+    }
+
+    let schema = yup.object().shape(contactSchema);
+
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            address: '',
+            phone: '',
+            bill: '',
+        },
+        validationSchema: schema,
+        onSubmit: values => {
+            console.log(values)
+        },
+    });
+
+    const { handleSubmit, errors, getFieldProps, touched } = formik;
     return (
         <div>
             {/* breadcrumb-section */}
@@ -37,13 +70,72 @@ function Checkout(props) {
                                         <div id="collapseOne" className="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                             <div className="card-body">
                                                 <div className="billing-address-form">
-                                                    <form action="index.html">
-                                                        <p><InputBox type="text" placeholder="Name" /></p>
-                                                        <p><InputBox type="email" placeholder="Email" /></p>
-                                                        <p><InputBox type="text" placeholder="Address" /></p>
-                                                        <p><InputBox type="tel" placeholder="Phone" /></p>
-                                                        <p><textarea name="bill" id="bill" cols={30} rows={10} placeholder="Say Something" defaultValue={""} /></p>
-                                                    </form>
+                                                    <div action="index.html">
+                                                        <FormikProvider value={formik}>
+                                                            <Form onSubmit={handleSubmit}>
+                                                                <p>
+                                                                    <InputBox 
+                                                                        type="text" 
+                                                                        placeholder="Name"
+                                                                        name="name"
+                                                                        id="name" 
+                                                                        {...getFieldProps("name")}
+                                                                        errors={Boolean(errors.name && touched.name)}
+                                                                        errorMessage={(errors.name && touched.name) && errors.name}
+                                                                    />
+                                                                </p>
+                                                                <p>
+                                                                    <InputBox 
+                                                                        type="email" 
+                                                                        placeholder="Email" 
+                                                                        name="email"
+                                                                        id="email"
+                                                                        {...getFieldProps("email")}
+                                                                        errors={Boolean(errors.email && touched.email)}
+                                                                        errorMessage={(errors.email && touched.email) && errors.email}
+                                                                    />
+                                                                </p>
+                                                                <p>
+                                                                    <InputBox 
+                                                                        type="text" 
+                                                                        placeholder="Address" 
+                                                                        name="address"
+                                                                        id="address"
+                                                                        {...getFieldProps("address")}
+                                                                        errors={Boolean(errors.address && touched.address)}
+                                                                        errorMessage={(errors.address && touched.address) && errors.address}
+                                                                    />
+                                                                </p>
+                                                                <p>
+                                                                    <InputBox 
+                                                                        type="tel" 
+                                                                        placeholder="Phone" 
+                                                                        name="phone"
+                                                                        id="phone"
+                                                                        {...getFieldProps("phone")}
+                                                                        errors={Boolean(errors.phone && touched.phone)}
+                                                                        errorMessage={(errors.phone && touched.phone) && errors.phone}
+                                                                    />
+                                                                </p>
+                                                                <p>
+                                                                    <InputBox 
+                                                                        type="textarea" 
+                                                                        name="bill" 
+                                                                        id="bill" 
+                                                                        placeholder="Say Something" 
+                                                                        {...getFieldProps("bill")}
+                                                                        errors={Boolean(errors.bill && touched.bill)}
+                                                                        errorMessage={(errors.bill && touched.bill) && errors.bill}
+                                                                    />
+                                                                </p>
+                                                                <p>
+                                                                    <Button buttonType={ButtonType.Primary} type="submit">
+                                                                        Send
+                                                                    </Button>
+                                                                </p>
+                                                            </Form>
+                                                        </FormikProvider>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
