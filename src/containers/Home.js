@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Button, { ButtonType } from '../components/common/Button/Button';
 
 function Home(props) {
@@ -15,7 +15,9 @@ function Home(props) {
                                     <h1>Delicious Seasonal Fruits</h1>
                                     <div className="hero-btns">
                                         <Button buttonType={ButtonType.Primary}>Fruit Collection</Button>
-                                        <Button buttonType={ButtonType.Border}>Contact Us</Button>
+                                        <Button buttonType={ButtonType.Border}>
+                                            <NavLink to="/contact" className="text-white">Contact Us</NavLink>
+                                        </Button>
                                     </div>
                                 </div>
                             </div>

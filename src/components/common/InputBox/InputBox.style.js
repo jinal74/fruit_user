@@ -16,5 +16,5 @@ export const InputBoxStyle = styled(Input)`
 
 export const InputBoxError = styled(FormFeedback)`
     color: red;
-    display: ${props => props.display.error ? 'flex' : 'none'}
+    display: ${props => props.display.errors ? 'flex' : 'none'}
 `;
