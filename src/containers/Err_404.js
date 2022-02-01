@@ -17,7 +17,6 @@ function Err_404(props) {
                     </div>
                 </div>
             </div>
-            {/* end breadcrumb section */}
             {/* error section */}
             <div className="full-height-section error-section">
                 <div className="full-height-tablecell">
@@ -35,34 +34,6 @@ function Err_404(props) {
                     </div>
                 </div>
             </div>
-            {/* end error section */}
-            {/* logo carousel */}
-            <div className="logo-carousel-section">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="logo-carousel-inner">
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/1.png"  />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/2.png"  />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/3.png"  />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/4.png"  />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/5.png"  />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* end logo carousel */}
         </div>
 
     );

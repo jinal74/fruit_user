@@ -1,8 +1,86 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Button, { ButtonType } from '../components/common/Button/Button';
+import InputBox from '../components/common/InputBox/InputBox';
+
+const productData = [
+    {
+        id: 101,
+        name: "Strawberry",
+        price: 85,
+        imgPath: "assets/img/products/product-img-1.jpg"
+    },
+    {
+        id: 102,
+        name: "Black Grapes",
+        price: 70,
+        imgPath: "assets/img/products/product-img-2.jpg"
+    },
+    {
+        id: 103,
+        name: "Lemon",
+        price: 35,
+        imgPath: "assets/img/products/product-img-3.jpg"
+    },
+    {
+        id: 104,
+        name: "Kiwi",
+        price: 50,
+        imgPath: "assets/img/products/product-img-4.jpg"
+    },
+    {
+        id: 105,
+        name: "Green Apple",
+        price: 45,
+        imgPath: "assets/img/products/product-img-5.jpg"
+    },
+    {
+        id: 106,
+        name: "Raspberry",
+        price: 80,
+        imgPath: "assets/img/products/product-img-6.jpg"
+    }
+]
 
 function Shop(props) {
+    const [filter, setFilter] = useState();
+    const [sortData, setSortData] = useState();
+    const [sort, setSort] = useState();
+
+    const handleSearch = (s) => {
+        console.log(s)
+        if (s !== "") {
+            let filterData = productData.filter((item) => (
+                item.name.toString().toLowerCase().includes(s.toLowerCase()) ||
+                item.price.toString().includes(s)
+            ))
+
+            //console.log(filterData)
+            setFilter(filterData)
+        } else {
+            setFilter()
+            handleSort(sort, true)
+        }
+    }
+
+    const handleSort = (s, empty=false) => {
+        let sort = !empty && filter ? filter : productData
+        setSort(s)
+
+        if (s !== "0") {
+            let sData = sort.sort((x,y) => {
+                if (s === "hl") {
+                    return y.price - x.price;
+                } else if (s === "lh") {
+                    return x.price - y.price
+                }
+            })
+            setSortData([...sData])
+        }
+    }
+
+    let fData = filter ? filter : sortData ? sortData : productData
+
     return (
         <div>
             {/* breadcrumb-section */}
@@ -18,108 +96,75 @@ function Shop(props) {
                     </div>
                 </div>
             </div>
-            {/* end breadcrumb section */}
+
             {/* products */}
             <div className="product-section mt-150 mb-150">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12">
-                            <div className="product-filters">
-                                <ul>
-                                    <li className="active" data-filter="*">All</li>
-                                    <li data-filter=".strawberry">Strawberry</li>
-                                    <li data-filter=".berry">Berry</li>
-                                    <li data-filter=".lemon">Lemon</li>
-                                </ul>
-                            </div>
+                        <div className="col-6 mb-5">
+                            <InputBox
+                                onChange={(e) => handleSearch(e.target.value)}
+                                placeholder="Search here..."
+                                className="w-100 border-secondary"
+                            />
+                        </div>
+                        <div className="col-6 mb-5">
+                            <InputBox
+                                type="select"
+                                className="w-100 border-secondary"
+                                onChange={(e) => handleSort(e.target.value)}
+                            >
+                                <option value="0">-- : --  Sort  -- : --</option>
+                                <option value="hl">High to low</option>
+                                <option value="lh">Low to high</option>
+                            </InputBox>
                         </div>
                     </div>
-                    <div className="row product-lists">
-                        <div className="col-lg-4 col-md-6 text-center strawberry">
-                            <div className="single-product-item">
-                                <div className="product-image">
-                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-1.jpg" alt="" /></Link>
-                                </div>
-                                <h3>Strawberry</h3>
-                                <p className="product-price"><span>Per Kg</span> 85$ </p>
-                                <Link to="/cart">
-                                    <Button buttonType={ButtonType.Primary}>
-                                        <i className="fas fa-shopping-cart" /> Add to Cart
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 text-center berry">
-                            <div className="single-product-item">
-                                <div className="product-image">
-                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-2.jpg" alt="" /></Link>
-                                </div>
-                                <h3>Berry</h3>
-                                <p className="product-price"><span>Per Kg</span> 70$ </p>
-                                <Link to="/cart">
-                                    <Button buttonType={ButtonType.Primary}>
-                                        <i className="fas fa-shopping-cart" /> Add to Cart
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 text-center lemon">
-                            <div className="single-product-item">
-                                <div className="product-image">
-                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-3.jpg" alt="" /></Link>
-                                </div>
-                                <h3>Lemon</h3>
-                                <p className="product-price"><span>Per Kg</span> 35$ </p>
-                                <Link to="/cart">
-                                    <Button buttonType={ButtonType.Primary}>
-                                        <i className="fas fa-shopping-cart" /> Add to Cart
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 text-center">
-                            <div className="single-product-item">
-                                <div className="product-image">
-                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-4.jpg" alt="" /></Link>
-                                </div>
-                                <h3>Avocado</h3>
-                                <p className="product-price"><span>Per Kg</span> 50$ </p>
-                                <Link to="/cart">
-                                    <Button buttonType={ButtonType.Primary}>
-                                        <i className="fas fa-shopping-cart" /> Add to Cart
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 text-center">
-                            <div className="single-product-item">
-                                <div className="product-image">
-                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-5.jpg" alt="" /></Link>
-                                </div>
-                                <h3>Green Apple</h3>
-                                <p className="product-price"><span>Per Kg</span> 45$ </p>
-                                <Link to="/cart">
-                                    <Button buttonType={ButtonType.Primary}>
-                                        <i className="fas fa-shopping-cart" /> Add to Cart
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 text-center strawberry">
-                            <div className="single-product-item">
-                                <div className="product-image">
-                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-6.jpg" alt="" /></Link>
-                                </div>
-                                <h3>Strawberry</h3>
-                                <p className="product-price"><span>Per Kg</span> 80$ </p>
-                                <Link to="/cart">
-                                    <Button buttonType={ButtonType.Primary}>
-                                        <i className="fas fa-shopping-cart" /> Add to Cart
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
+                    
+                    <div className="row">
+                        {
+                            fData !== undefined ?
+                            fData.map((m) => {
+                                return (
+                                    <div className="col-4 text-center" key={m.id.toString()}>
+                                        <div className="single-product-item">
+                                            {
+                                                m.imgPath !== undefined ? 
+                                                <div className="product-image">
+                                                <Link to="/singleProduct">
+                                                    <img 
+                                                        src={m.imgPath}
+                                                        // src="assets/img/products/product-img-1.jpg" 
+                                                        alt="" 
+                                                    />
+                                                </Link>
+                                            </div> 
+                                            : null
+                                            }
+                                            {
+                                                m.name !== undefined ? 
+                                                    <h3>{m.name}</h3>
+                                                : null
+                                            }
+                                            {
+                                                m.price !== undefined ? 
+                                                <p className="product-price">
+                                                    <span>Per Kg</span> {m.price}$ 
+                                                </p>
+                                                : null
+                                            }
+                                            <Link to="/cart">
+                                                <Button buttonType={ButtonType.Primary}>
+                                                    <i className="fas fa-shopping-cart" /> Add to Cart
+                                                </Button>
+                                            </Link>
+                                        </div>
+                                    </div>
+                                )
+                            }) : null
+                        }
                     </div>
+
                     <div className="row">
                         <div className="col-lg-12 text-center pt-100">
                             <div className="pagination-wrap pt-150">
@@ -135,34 +180,6 @@ function Shop(props) {
                     </div>
                 </div>
             </div>
-            {/* end products */}
-            {/* logo carousel */}
-            <div className="logo-carousel-section">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="logo-carousel-inner">
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/1.png" alt="" />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/2.png" alt="" />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/3.png" alt="" />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/4.png" alt="" />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/5.png" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* end logo carousel */}
         </div>
 
     );

@@ -2,8 +2,37 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button, { ButtonType } from '../components/common/Button/Button';
 import InputBox from '../components/common/InputBox/InputBox';
+import * as yup from "yup";
+import { Form, FormikProvider, useFormik } from "formik";
 
 function SingleNews(props) {
+
+    let contactSchema = {
+        name: yup.string()
+            .required("Username is must required"),
+        email: yup.string()
+            .required('E-mail is must required')
+            .email('Invalid email address'),
+        comment: yup.string()
+            .required("Message is must required")
+    }
+
+    let schema = yup.object().shape(contactSchema);
+
+    const formik = useFormik({
+        initialValues: {
+            name: '',
+            email: '',
+            comment: ''
+        },
+        validationSchema: schema,
+        onSubmit: values => {
+            console.log(values)
+        },
+    });
+
+    const { handleSubmit, errors, getFieldProps, touched } = formik;
+
     return (
         <div>
             {/* breadcrumb-section */}
@@ -85,16 +114,44 @@ function SingleNews(props) {
                                 <div className="comment-template">
                                     <h4>Leave a comment</h4>
                                     <p>If you have a comment dont feel hesitate to send us your opinion.</p>
-                                    <form action="index.html">
-                                        <p className='d-flex'>
-                                            <InputBox type="text" placeholder="Your Name" />
-                                            <InputBox type="email" placeholder="Your Email" />
-                                        </p>
-                                        <p><textarea name="comment" id="comment" cols={30} rows={10} placeholder="Your Message" defaultValue={""} /></p>
-                                        <p>
-                                            <Button buttonType={ButtonType.Primary}>Submit</Button>
-                                        </p>
-                                    </form>
+                                    <FormikProvider value={formik}>
+                                        <Form onSubmit={handleSubmit}>
+                                            <div action="index.html">
+                                                <p className='d-flex'>
+                                                    <InputBox 
+                                                        name="name" 
+                                                        type="text" 
+                                                        placeholder="Your Name" 
+                                                        {...getFieldProps("name")}
+                                                        errors={Boolean(errors.name && touched.name)}
+                                                        errorMessage={(errors.name && touched.name) && errors.name}
+                                                    />
+                                                    <InputBox 
+                                                        name="email" 
+                                                        type="email" 
+                                                        placeholder="Your Email" 
+                                                        {...getFieldProps("email")}
+                                                        errors={Boolean(errors.email && touched.email)}
+                                                        errorMessage={(errors.email && touched.email) && errors.email}
+                                                    />
+                                                </p>
+                                                <p>
+                                                    <InputBox 
+                                                        name="comment" 
+                                                        id="comment" 
+                                                        placeholder="Your Message" 
+                                                        type="textarea"
+                                                        {...getFieldProps("comment")}
+                                                        errors={Boolean(errors.comment && touched.comment)}
+                                                        errorMessage={(errors.comment && touched.comment) && errors.comment} 
+                                                    />
+                                                </p>
+                                                <p>
+                                                    <Button buttonType={ButtonType.Primary}>Submit</Button>
+                                                </p>
+                                            </div>
+                                        </Form>
+                                    </FormikProvider>
                                 </div>
                             </div>
                         </div>
@@ -130,32 +187,6 @@ function SingleNews(props) {
                                         <li><Link to="/news">Lemon</Link></li>
                                         <li><Link to="/news">Banana</Link></li>
                                     </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* logo carousel */}
-            <div className="logo-carousel-section">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="logo-carousel-inner">
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/1.png" alt="" />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/2.png" alt="" />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/3.png" alt="" />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/4.png" alt="" />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/5.png" alt="" />
                                 </div>
                             </div>
                         </div>

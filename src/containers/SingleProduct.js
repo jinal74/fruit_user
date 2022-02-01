@@ -19,7 +19,6 @@ function SingleProduct(props) {
                     </div>
                 </div>
             </div>
-            {/* end breadcrumb section */}
             {/* single product */}
             <div className="single-product mt-150 mb-150">
                 <div className="container">
@@ -81,7 +80,6 @@ function SingleProduct(props) {
                     </div>
                 </div>
             </div>
-            {/* end single product */}
             {/* more products */}
             <div className="more-products mb-150">
                 <div className="container">
@@ -139,34 +137,6 @@ function SingleProduct(props) {
                     </div>
                 </div>
             </div>
-            {/* end more products */}
-            {/* logo carousel */}
-            <div className="logo-carousel-section">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="logo-carousel-inner">
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/1.png" alt="" />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/2.png" alt="" />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/3.png" alt="" />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/4.png" alt="" />
-                                </div>
-                                <div className="single-logo-item">
-                                    <img src="assets/img/company-logos/5.png" alt="" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* end logo carousel */}
         </div>
 
     );
