@@ -10,7 +10,7 @@ function Header(props) {
                         <div className="main-menu-wrap">
                             <div className="site-logo">
                                 <Link>
-                                    <img src="assets/img/logo.png" alt="" />
+                                    <img src="assets/img/new_logo.png" alt="" />
                                 </Link>
                             </div>
                             <nav className="main-menu">
@@ -50,7 +50,12 @@ function Header(props) {
                                     </li>
                                     <li>
                                         <div className="header-icons">
-                                            <NavLink to="/cart" className="shopping-cart"><i className="fas fa-shopping-cart" /></NavLink>
+                                            <NavLink to="/cart" className="shopping-cart position-relative">
+                                                <i className="fas fa-shopping-cart" />
+                                                <div class="base-counter">
+                                                    <span>7</span>
+                                                </div>
+                                            </NavLink>
                                             <NavLink to="/search" className="mobile-hide search-bar-icon"><i className="fas fa-search" /></NavLink>
                                         </div>
                                     </li>

@@ -49,28 +49,28 @@ function SingleProduct(props) {
                                 <ul className="product-share">
                                     <li>
                                         <Button buttonType={ButtonType.Link}>
-                                            <Link to={{pathname:"https://www.facebook.com/"}} target="_blank">
+                                            <Link to={{ pathname: "https://www.facebook.com/" }} target="_blank">
                                                 <i className="fab fa-facebook-f" />
                                             </Link>
                                         </Button>
                                     </li>
                                     <li>
                                         <Button buttonType={ButtonType.Link}>
-                                            <Link to={{pathname:"https://www.twitter.com/"}} target="_blank">
+                                            <Link to={{ pathname: "https://www.twitter.com/" }} target="_blank">
                                                 <i className="fab fa-twitter" />
                                             </Link>
                                         </Button>
                                     </li>
                                     <li>
                                         <Button buttonType={ButtonType.Link}>
-                                            <Link to={{pathname:"https://www.linkedin.com/"}} target="_blank">
+                                            <Link to={{ pathname: "https://www.linkedin.com/" }} target="_blank">
                                                 <i className="fab fa-linkedin" />
                                             </Link>
                                         </Button>
                                     </li>
                                     <li>
                                         <Button buttonType={ButtonType.Link}>
-                                            <Link to={{pathname:"https://www.google.com/"}} target="_blank">
+                                            <Link to={{ pathname: "https://www.google.com/" }} target="_blank">
                                                 <i className="fab fa-google" />
                                             </Link>
                                         </Button>

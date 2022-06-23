@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Button, { ButtonType } from '../components/common/Button/Button';
+import { fetchProduct } from '../redux/action/product.action';
 
 function Home(props) {
+
+    const dispatch = useDispatch();
+    const products = useSelector(state => state.products)
+
+    useEffect(
+        () => {
+            dispatch(fetchProduct())
+        },
+        [])
+
+    const addToCart = (id) => {
+        console.log(id)
+    }
+
     return (
         <div>
             <div className="hero-area hero-bg">
@@ -73,21 +89,29 @@ function Home(props) {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-lg-4 col-md-6 text-center">
-                            <div className="single-product-item">
-                                <div className="product-image">
-                                    <Link to="/singleProduct"><img src="assets/img/products/product-img-1.jpg" alt=""  className='h-100'/></Link>
-                                </div>
-                                <h3>Strawberry</h3>
-                                <p className="product-price"><span>Per Kg</span> 85$ </p>
-                                <Link to="/cart">
-                                    <Button buttonType={ButtonType.Primary}>
-                                        <i className="fas fa-shopping-cart" /> Add to Cart
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
-                        <div className="col-lg-4 col-md-6 text-center">
+                        {
+                            products.products &&
+                            products.products.map((item, i) => {
+                                return (
+                                    <div className="col-lg-4 col-md-6 text-center">
+                                        <div className="single-product-item">
+                                            <div className="product-image">
+                                                <Link to="/singleProduct"><img src={item.image_url} alt="" className='h-100' /></Link>
+                                            </div>
+                                            <h3>{item.title}</h3>
+                                            <p>{item.sub_title}</p>
+                                            <p className="product-price"><bdi>Rs.</bdi> {item.price} <span>Per Kg</span></p>
+                                            {/* <Link to="/cart"> */}
+                                            <Button buttonType={ButtonType.Primary} onClick={() => addToCart(item.id)}>
+                                                <i className="fas fa-shopping-cart" /> Add to Cart
+                                            </Button>
+                                            {/* </Link> */}
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                        {/* <div className="col-lg-4 col-md-6 text-center">
                             <div className="single-product-item">
                                 <div className="product-image">
                                     <Link to="/singleProduct"><img src="assets/img/products/product-img-2.jpg" alt="" /></Link>
@@ -114,7 +138,7 @@ function Home(props) {
                                     </Button>
                                 </Link>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
@@ -252,7 +276,7 @@ function Home(props) {
                                     <p className="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
                                     <Link to="/singleNews">
                                         <Button buttonType={ButtonType.Link}>
-                                            read more 
+                                            read more
                                             <i className="fas fa-angle-right" />
                                         </Button>
                                     </Link>
@@ -271,7 +295,7 @@ function Home(props) {
                                     <p className="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
                                     <Link to="/singleNews">
                                         <Button buttonType={ButtonType.Link}>
-                                            read more 
+                                            read more
                                             <i className="fas fa-angle-right" />
                                         </Button>
                                     </Link>
@@ -290,7 +314,7 @@ function Home(props) {
                                     <p className="excerpt">Vivamus lacus enim, pulvinar vel nulla sed, scelerisque rhoncus nisi. Praesent vitae mattis nunc, egestas viverra eros.</p>
                                     <Link to="/singleNews">
                                         <Button buttonType={ButtonType.Link}>
-                                            read more 
+                                            read more
                                             <i className="fas fa-angle-right" />
                                         </Button>
                                     </Link>
@@ -300,9 +324,9 @@ function Home(props) {
                     </div>
                     <div className="row">
                         <div className="col-lg-12 text-center">
-                        <Link to="/news">
-                            <Button buttonType={ButtonType.Primary}>More News</Button>
-                        </Link>
+                            <Link to="/news">
+                                <Button buttonType={ButtonType.Primary}>More News</Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
